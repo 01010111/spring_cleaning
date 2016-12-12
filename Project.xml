@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<!-- _________________________ Application Settings _________________________ -->
+
+	<app title="Roomba" file="Roomba" main="Main" version="0.0.1" company="HaxeFlixel" />
+
+	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
+		or you can set the actual size of your file manually at "FlxPreloaderBase-onUpdate-bytesTotal"-->
+	<app preloader="flixel.system.FlxPreloader" />
+
+	<!--Minimum without FLX_NO_GAMEPAD: 11.8, without FLX_NO_NATIVE_CURSOR: 11.2-->
+	<set name="SWF_VERSION" value="11.8" />
+
+	<!-- ____________________________ Window Settings ___________________________ -->
+
+	<!--These window settings apply to all targets-->
+	<window width="320" height="288" fps="60" background="#000000" hardware="true" vsync="true" />
+
+	<!--HTML5-specific-->
+	<window if="html5" resizable="false" />
+
+	<!--Desktop-specific-->
+	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" />
+
+	<!--Mobile-specific-->
+	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" />
+
+	<!-- _____________________________ Path Settings ____________________________ -->
+
+	<set name="BUILD_DIR" value="export" />
+	<classpath name="source" />
+	<assets path="assets/images" embed="true" />
+
+	<!-- _______________________________ Libraries ______________________________ -->
+
+	<haxelib name="flixel" />
+	<haxelib name="zerolib" />
+
+	<!--In case you want to use the addons package-->
+	<!--<haxelib name="flixel-addons" />-->
+
+	<!--In case you want to use the ui package-->
+	<!--<haxelib name="flixel-ui" />-->
+
+	<!--In case you want to use nape with flixel-->
+	<!--<haxelib name="nape" />-->
+
+	<!-- ______________________________ Haxedefines _____________________________ -->
+
+	<!--Enable the Flixel core recording system-->
+	<!--<haxedef name="FLX_RECORD" />-->
+
+	<!--Disable the right and middle mouse buttons-->
+	<!--<haxedef name="FLX_NO_MOUSE_ADVANCED" />-->
+
+	<!--Disable the native cursor API on Flash-->
+	<!--<haxedef name="FLX_NO_NATIVE_CURSOR" />-->
+
+	<!--Optimise inputs, be careful you will get null errors if you don't use conditionals in your game-->
+	<haxedef name="FLX_NO_MOUSE" if="mobile" />
+	<haxedef name="FLX_NO_KEYBOARD" if="mobile" />
+	<haxedef name="FLX_NO_TOUCH" if="desktop" />
+	<!--<haxedef name="FLX_NO_GAMEPAD" />-->
+
+	<!--Disable the Flixel core sound tray-->
+	<!--<haxedef name="FLX_NO_SOUND_TRAY" />-->
+
+	<!--Disable the Flixel sound management code-->
+	<!--<haxedef name="FLX_NO_SOUND_SYSTEM" />-->
+
+	<!--Disable the Flixel core focus lost screen-->
+	<haxedef name="FLX_NO_FOCUS_LOST_SCREEN" />
+
+	<!--Disable the Flixel core debugger. Automatically gets set whenever you compile in release mode!-->
+	<haxedef name="FLX_NO_DEBUG" unless="debug" />
+
+	<!--Enable this for Nape release builds for a serious peformance improvement-->
+	<haxedef name="NAPE_RELEASE_BUILD" unless="debug" />
+
+	<!-- _________________________________ Custom _______________________________ -->
+
+	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
+	
+	<assets path="assets/music/mp3" if="flash" embed="true">
+		<sound path="woop.mp3" id="woop" />
+	</assets>
+	
+	<assets path="assets/sounds/mp3" if="flash" embed="true">
+		<sound path="squu0.mp3" id="squu0" />
+		<sound path="squu1.mp3" id="squu1" />
+		<sound path="squu2.mp3" id="squu2" />
+		<sound path="squu3.mp3" id="squu3" />
+		<sound path="squu4.mp3" id="squu4" />
+		<sound path="suck0.mp3" id="suck0" />
+		<sound path="suck1.mp3" id="suck1" />
+		<sound path="suck2.mp3" id="suck2" />
+		<sound path="suck3.mp3" id="suck3" />
+		<sound path="suck4.mp3" id="suck4" />
+		<sound path="suck5.mp3" id="suck5" />
+		<sound path="suck6.mp3" id="suck6" />
+		<sound path="suck7.mp3" id="suck7" />
+		<sound path="suck8.mp3" id="suck8" />
+		<sound path="suck9.mp3" id="suck9" />
+		<sound path="talk0.mp3" id="talk0" />
+		<sound path="talk1.mp3" id="talk1" />
+		<sound path="talk2.mp3" id="talk2" />
+		<sound path="talk3.mp3" id="talk3" />
+		<sound path="talk4.mp3" id="talk4" />
+		<sound path="talk5.mp3" id="talk5" />
+		<sound path="talk6.mp3" id="talk6" />
+		<sound path="talk7.mp3" id="talk7" />
+		<sound path="talk8.mp3" id="talk8" />
+		<sound path="talk9.mp3" id="talk9" />
+	</assets>
+	
+</project>
